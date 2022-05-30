@@ -1,0 +1,1 @@
+{"credsStore":"ecr-login","credHelpers":{"${repository_url}/kaniko-artifact":"ecr-login"}}

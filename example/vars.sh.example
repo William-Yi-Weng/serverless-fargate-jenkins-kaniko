@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# export TERRAFORM_WORKSPACE=jason-local-farm-runner
+export TF_STATE_BUCKET="my-state-bucket"
+export TF_STATE_OBJECT_KEY="serverless-jenkins.tfstate"
+export TF_LOCK_DB="my-lock-table"
+export AWS_REGION=""
+
+PRIVATE_SUBNETS=''
+PUBLIC_SUBNETS=''
+VPC_ID=""
+
+export TF_VAR_route53_zone_id=""
+export TF_VAR_route53_domain_name=""
+export TF_VAR_vpc_id=${VPC_ID}
+export TF_VAR_efs_subnet_ids=${PRIVATE_SUBNETS}
+export TF_VAR_jenkins_controller_subnet_ids=${PRIVATE_SUBNETS}
+export TF_VAR_alb_subnet_ids=${PUBLIC_SUBNETS}
