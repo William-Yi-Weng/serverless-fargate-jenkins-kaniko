@@ -6,14 +6,14 @@ deploy_example.sh script and therefore do not need to be updated.
 terraform {
   required_version = ">= 0.13"
   backend "s3" {
-    bucket = "my-state-bucket-willtest"
-    key    = "serverless-jenkins.tfstate"
+    bucket  = "my-state-bucket"
+    key     = "serverless-jenkins.tfstate"
     encrypt = true
   }
 }
 
 provider "aws" {
-    region = "ap-southeast-2"
-    access_key=""
-    secret_key=""
+  region     = "ap-southeast-2"
+  access_key = ""
+  secret_key = ""
 }
