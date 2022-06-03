@@ -10,6 +10,16 @@ locals {
   region     = data.aws_region.current.name
 }
 
+resource "aws_ssm_parameter" "jenkins_secret" {
+  name        = "/jenkins-pwd"
+  description = "The password for jenkins admin user"
+  type        = "SecureString"
+  value       = var.jenkins_admin_password
+
+  tags = {
+    environment = "Jenkins"
+  }
+}
 
 resource "aws_security_group" "efs_security_group" {
   name        = "${var.name_prefix}-efs"

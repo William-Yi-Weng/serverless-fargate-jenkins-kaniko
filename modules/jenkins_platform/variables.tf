@@ -11,6 +11,11 @@ variable "jenkins_ecr_repository_kaniko_name" {
   description = "Name for Jenkins spot-kaniko ECR repository"
 }
 
+variable "jenkins_admin_password" {
+  type        = string
+  description = "The password for jenkins admin user"
+}
+
 variable "name_prefix" {
   type    = string
   default = "serverless-jenkins"

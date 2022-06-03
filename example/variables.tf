@@ -1,9 +1,9 @@
-variable route53_domain_name {
+variable "route53_domain_name" {
   type        = string
   description = "The domain"
 }
 
-variable route53_zone_id {
+variable "route53_zone_id" {
   type        = string
   description = <<EOF
 The route53 zone id where DNS entries will be created. Should be the zone id
@@ -11,7 +11,13 @@ for the domain in the var route53_domain_name.
 EOF
 }
 
-variable jenkins_dns_alias {
+// Route 53
+variable "route53_create_alias" {
+  type    = string
+  default = false
+}
+
+variable "jenkins_dns_alias" {
   type        = string
   description = <<EOF
 The DNS alias to be associated with the deployed jenkins instance. Alias will
@@ -20,25 +26,30 @@ EOF
   default     = "jenkins-controller"
 }
 
-variable vpc_id {
+variable "jenkins_admin_password" {
+  type        = string
+  description = "The password for jenkins admin user"
+}
+
+variable "vpc_id" {
   type        = string
   description = "The vpc id for where jenkins will be deployed"
 }
 
-variable efs_subnet_ids {
+variable "efs_subnet_ids" {
   type        = list(string)
   description = "A list of subnets to attach to the EFS mountpoint. Should be private"
-#   default = ["subnet-5d12c221","subnet-2178df6d","subnet-29452043"]
+  #   default = ["subnet-5d12c221","subnet-2178df6d","subnet-29452043"]
 }
 
-variable jenkins_controller_subnet_ids {
+variable "jenkins_controller_subnet_ids" {
   type        = list(string)
   description = "A list of subnets for the jenkins controller fargate service. Should be private"
-#   default = ["subnet-5d12c221","subnet-2178df6d","subnet-29452043"]
+  #   default = ["subnet-5d12c221","subnet-2178df6d","subnet-29452043"]
 }
 
-variable alb_subnet_ids {
+variable "alb_subnet_ids" {
   type        = list(string)
   description = "A list of subnets for the Application Load Balancer"
-#   default = ["subnet-5d12c221","subnet-2178df6d","subnet-29452043"]
+  #   default = ["subnet-5d12c221","subnet-2178df6d","subnet-29452043"]
 }
