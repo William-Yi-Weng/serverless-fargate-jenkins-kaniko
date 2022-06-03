@@ -5,5 +5,5 @@
     --insecure \
     --skip-tls-verify \
     --force \
-    --destination=${repository_url}/kaniko-artifact:latest
+    --destination=${repository_url}/kaniko-artifact:release-x.x.x
 
