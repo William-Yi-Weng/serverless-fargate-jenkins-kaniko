@@ -1,0 +1,2 @@
+Embedded Kaniko into serverless Jenkins Archetecture based AWS serverless Jenkins environment on AWS Fargate.
+https://aws.amazon.com/blogs/devops/building-a-serverless-jenkins-environment-on-aws-fargate/
