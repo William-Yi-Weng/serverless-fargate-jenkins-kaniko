@@ -12,8 +12,6 @@ RUN apk --update add \
   unzip \
   npm
 
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.21.4/bin/linux/amd64/kubectl
-RUN chmod u+x kubectl && mv kubectl /bin/kubectl
 #
 # Add kaniko to this image by re-using binaries and steps from official image
 #
